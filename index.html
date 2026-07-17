@@ -331,38 +331,31 @@ h1.headline .accent{
 .project-hero-viz{
   width:100%; aspect-ratio:16/7; border-radius:12px; margin-bottom:34px;
   background:#FFFFFF;
-  background-image:
-    linear-gradient(rgba(132, 151, 176, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(132, 151, 176, 0.04) 1px, transparent 1px);
-  background-size:20px 20px;
-  border:1px solid rgba(56, 189, 248, 0.2);
+  border:1px solid rgba(56, 189, 248, 0.15);
   display:flex; align-items:center; justify-content:center;
   position:relative;
   overflow:hidden;
   padding:24px;
-  box-shadow:inset 0 0 20px rgba(11, 18, 32, 0.05);
-  clip-path: inset(0 100% 0 0);
-  transition: clip-path 1.2s cubic-bezier(0.76, 0, 0.24, 1);
+  box-shadow:inset 0 0 20px rgba(11, 18, 32, 0.04);
+  opacity:0;
+  transform:translateY(25px);
+  transition:opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .project-card.show .project-hero-viz {
-  clip-path: inset(0 0 0 0);
+  opacity:1;
+  transform:translateY(0);
 }
-.project-hero-viz::before, .project-hero-viz::after{
-  content:""; position:absolute; font-family:var(--font-m); font-size:8px; color:var(--muted-2); opacity:0.5; pointer-events:none;
-}
-.project-hero-viz::before{ content:"SYS_REF: A01"; top:8px; left:10px; }
-.project-hero-viz::after{ content:"SCALE: 1:1"; bottom:8px; right:10px; }
 .project-hero-viz img{
   width:100%; height:100%; object-fit:contain;
-  filter:drop-shadow(0 12px 24px rgba(0,0,0,0.12));
-  transform: scale(1.15) translateX(30px);
-  transition: transform 1.2s cubic-bezier(0.76, 0, 0.24, 1);
+  filter:drop-shadow(0 8px 20px rgba(0,0,0,0.08));
+  transform: scale(0.95);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .project-card.show .project-hero-viz img {
-  transform: scale(1) translateX(0);
+  transform: scale(1);
 }
 .project-card:hover .project-hero-viz img{
-  transform:scale(1.04) translateX(0) !important;
+  transform:scale(1.04) !important;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
   transition-delay: 0s !important;
 }
