@@ -575,7 +575,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
       <div class="typewrap"><span id="typeTarget"></span><span class="cursor"></span></div>
       <div class="hero-actions">
         <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="#" class="btn btn-ghost" id="resumeBtn">Download Resume</a>
+        <a href="Sujal_Resume.pdf" class="btn btn-ghost" id="resumeBtn" target="_blank" rel="noopener noreferrer">Download Resume</a>
         <a href="#contact" class="btn btn-ghost">Let's Connect</a>
       </div>
     </div>
@@ -918,11 +918,6 @@ const nodeIo = new IntersectionObserver((entries)=>{
 }, {threshold:.3});
 nodes.forEach(n=>nodeIo.observe(n));
 
-// ---------- resume + linkedin placeholders ----------
-document.getElementById('resumeBtn').addEventListener('click', (e)=>{
-  e.preventDefault();
-  alert('Add your hosted resume PDF link to the "Download Resume" button.');
-});
 
 // ---------- contact form (mailto fallback) ----------
 document.getElementById('contactForm').addEventListener('submit', (e)=>{
